@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ASA | <?= $judul ?></title>
+  <title>SISKASOFT | <?= $judul ?></title>
 
   <link rel="shortcut icon" href="<?= base_url() ?>assets/dist/img/favicon.ico" type="image/x-icon">
 

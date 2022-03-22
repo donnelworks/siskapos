@@ -224,6 +224,10 @@ table.dataTable > thead .sorting_desc_disabled:after {
   right: 0.1em;
 }
 
+.DTFC_RightBodyLiner {
+  overflow-y: visible !important;
+}
+
 .is-invalid + .select2 > .selection > .select2-selection--single {
   border: 1px solid var(--danger) !important;
 }

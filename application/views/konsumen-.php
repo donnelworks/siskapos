@@ -89,7 +89,7 @@ $this->load->view('_part/header');
             </form>
             <!-- Table -->
             <div class="card-body p-0">
-              <table id="tblData" class="table table-striped text-secondary nowrap" style="width: 100%;">
+              <table id="tblData" class="table table-sm table-striped text-secondary dt-responsive nowrap" style="width: 100%;">
                 <thead>
                   <tr>
                     <th>Kode</th>
@@ -559,12 +559,7 @@ $this->load->view('_part/header');
       url: "<?= site_url('konsumen/load_data') ?>",
       dataFilter: "#formFilter",
       pageLength: 25,
-      responsive: false,
-      scrollX: true,
-      fixedColumns: {
-        leftColumns: 2,
-        rightColumns: 2
-      },
+      responsive: true,
       order: [[18, 'desc']],
       columns: [
         {data: 'kode'},
@@ -597,11 +592,11 @@ $this->load->view('_part/header');
           return 'Rp ' + $.number(data, 2, ',', '.');
         }},
         {data: "id", className: 'all', orderable: false, searchable: false, render: function(data, type, row) {
-          return `<div>
+          return `<div class="text-center">
                     <button type="button" class="btn btn-rounded btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
                       <i class="fas fa-cog"></i>
                     </button>
-                    <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-menu">
                       <a class="dropdown-item ubah-data" href="javascript:void(0)" data-id="${data}">
                       <i class="bx bx-edit"></i> Ubah</a>
                       <a class="dropdown-item hapus-data" href="javascript:void(0)" data-id="${data}">

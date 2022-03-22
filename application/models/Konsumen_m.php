@@ -26,15 +26,15 @@ class Konsumen_m extends CI_Model {
     ksm.status,
 
     pdk.nama produk,
-    usr1.nama_user sales,
-    usr2.nama_user db,
-    usr3.nama_user kurir,
+    usr1.nama sales,
+    usr2.nama db,
+    usr3.nama kurir,
     ')
     ->from("$this->table ksm")
     ->join('produk pdk', 'ksm.id_produk = pdk.id', 'left')
-    ->join('user usr1', 'ksm.id_sales = usr1.id_user', 'left')
-    ->join('user usr2', 'ksm.id_db = usr2.id_user', 'left')
-    ->join('user usr3', 'ksm.id_kurir = usr3.id_user', 'left');
+    ->join('user usr1', 'ksm.id_sales = usr1.id', 'left')
+    ->join('user usr2', 'ksm.id_db = usr2.id', 'left')
+    ->join('user usr3', 'ksm.id_kurir = usr3.id', 'left');
     // Filter
     if ($post['nama_filter'] != null) {
       $this->datatables->like('ksm.nama', $post['nama_filter']);
@@ -75,21 +75,21 @@ class Konsumen_m extends CI_Model {
   function load_sales()
   {
     $this->db->from('user')
-    ->where('level_user', 3);
+    ->where('role', 3);
     return $this->db->get();
   }
 
   function load_db()
   {
     $this->db->from('user')
-    ->where('level_user', 2);
+    ->where('role', 2);
     return $this->db->get();
   }
 
   function load_kurir()
   {
     $this->db->from('user')
-    ->where('level_user', 5);
+    ->where('role', 5);
     return $this->db->get();
   }
 
