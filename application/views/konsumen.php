@@ -357,7 +357,7 @@ $this->load->view('_part/header');
     });
 
     // Ubah Data
-    $('#tblData').on('click', '.ubah-data', function(){
+    $(document).on('click', '.ubah-data', function(){
       var id = $(this).data('id');
       simpan = "ubah";
       $.ajax({
@@ -395,7 +395,7 @@ $this->load->view('_part/header');
     });
 
     // Hapus Data
-    $("#tblData").on('click', '.hapus-data', function(){
+    $(document).on('click', '.hapus-data', function(){
       var id = $(this).data('id');
       $('#idHapus').val(id);
       $('#mdlKonfirm').modal('show');
@@ -431,7 +431,7 @@ $this->load->view('_part/header');
     });
 
     // Ubah Status Data
-    $('#tblData').on('click','.status-data',function(){
+    $(document).on('click','.status-data',function(){
       var id = $(this).data('id');
       var status = $(this).data('status');
       $.ajax({
@@ -449,7 +449,6 @@ $this->load->view('_part/header');
         }
       });
     });
-
 
     // Submit Data
     $('#formData').submit(function(e){
@@ -597,11 +596,11 @@ $this->load->view('_part/header');
           return 'Rp ' + $.number(data, 2, ',', '.');
         }},
         {data: "id", className: 'all', orderable: false, searchable: false, render: function(data, type, row) {
-          return `<div>
-                    <button type="button" class="btn btn-rounded btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+          return `<div class="text-center menu-table">
+                    <button type="button" class="btn btn-rounded btn-primary btn-sm dropdown-toggle btn-menu-table" data-toggle="dropdown">
                       <i class="fas fa-cog"></i>
                     </button>
-                    <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-menu">
                       <a class="dropdown-item ubah-data" href="javascript:void(0)" data-id="${data}">
                       <i class="bx bx-edit"></i> Ubah</a>
                       <a class="dropdown-item hapus-data" href="javascript:void(0)" data-id="${data}">

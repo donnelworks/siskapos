@@ -225,7 +225,7 @@ table.dataTable > thead .sorting_desc_disabled:after {
 }
 
 .DTFC_RightBodyLiner {
-  overflow-y: visible !important;
+  overflow: hidden !important;
 }
 
 .is-invalid + .select2 > .selection > .select2-selection--single {

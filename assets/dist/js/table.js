@@ -50,5 +50,30 @@
        reloadTable(filterTable);
      });
 
+     $(table).on('click', '.btn-menu-table', function() {
+       dropmenuPostion();
+     });
+
+     function dropmenuPostion() {
+       var dropdownMenu;
+
+       $(window).on('show.bs.dropdown', function(e) {
+         dropdownMenu = $(e.target).find('.dropdown-menu');
+         $('body').append(dropdownMenu.detach());
+         var eOffset = $(e.target).offset();
+
+         dropdownMenu.css({
+           'display': 'block',
+           'top': eOffset.top + $(e.target).outerHeight(),
+           'left': eOffset.left - 50
+         });
+       });
+
+       $(window).on('hide.bs.dropdown', function(e) {
+         $(e.target).append(dropdownMenu.detach());
+         dropdownMenu.hide();
+       });
+     }
+
    };
 })( jQuery );
