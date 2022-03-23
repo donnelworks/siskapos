@@ -254,3 +254,24 @@ table.dataTable > thead .sorting_desc_disabled:after {
 [class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link {
   color: var(--light);
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark);
+}

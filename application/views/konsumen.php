@@ -597,9 +597,9 @@ $this->load->view('_part/header');
         }},
         {data: "id", className: 'all', orderable: false, searchable: false, render: function(data, type, row) {
           return `<div class="text-center menu-table">
-                    <button type="button" class="btn btn-rounded btn-primary btn-sm dropdown-toggle btn-menu-table" data-toggle="dropdown">
-                      <i class="fas fa-cog"></i>
-                    </button>
+                    <a href="javascript:void(0)" class="btn-menu-table" data-toggle="dropdown">
+                      <i class="bx bx-dots-horizontal-rounded bx-sm"></i>
+                    </a>
                     <div class="dropdown-menu">
                       <a class="dropdown-item ubah-data" href="javascript:void(0)" data-id="${data}">
                       <i class="bx bx-edit"></i> Ubah</a>
